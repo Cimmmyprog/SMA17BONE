@@ -36,8 +36,8 @@ export default function Kegiatan() {
               sangat bergantung pada kemampuannya dalam memanfaatkan Teknologi Informasi. Oleh karena itu, SMAN 17 BONE
               terus berupaya untuk menjadi sekolah yang adaptif dan inovatif terhadap perkembangan teknologi digital.
               <br /><br />
-              Dengan visi "Menjadi sekolah unggul yang melahirkan generasi berkarakter, berprestasi, dan berwawasan
-              global", kami berkomitmen untuk terus meningkatkan kualitas pendidikan dengan dukungan perangkat IT serta
+              Dengan visi{""}Menjadi sekolah unggul yang melahirkan generasi berkarakter, berprestasi, dan berwawasan
+              global, kami berkomitmen untuk terus meningkatkan kualitas pendidikan dengan dukungan perangkat IT serta
               berbagai sistem informasi yang menunjang kegiatan belajar-mengajar.
               <br /><br />
               Website ini kami hadirkan sebagai sarana informasi, komunikasi, dan kolaborasi antara sekolah dengan siswa,

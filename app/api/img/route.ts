@@ -1,31 +1,61 @@
-import { NextRequest,NextResponse } from "next/server";
-const imagex = [
+import { NextRequest, NextResponse } from "next/server";
+
+const fasilitas = [
   {
-    "id": 1,
-    "src": "/img/bagsket.jpg",
-    "alt": "Kegiatan Olahraga"
+    id: 1,
+    title: "Perpustakaan",
+    img: "9.jpeg",
   },
   {
-    "id": 2,
-    "src": "/img/sepak bola.jpg",
-    "alt": "Kegiatan Olahraga"
+    id: 2,
+    title: "Laboratorium",
+    img: "3.jpg",
   },
   {
-    "id": 3,
-    "src": "/img/3.jpg",
-    "alt": "Praktek Laboratorium"
-  }
-]
+    id: 3,
+    title: "Lapangan Olahraga",
+    img: "1.jpg",
+  },
+  {
+    id: 4,
+    title: "Ruang Komputer",
+    img: "5.jpeg",
+  },
+  {
+    id: 5,
+    title: "Ruang aula",
+    img: "8.jpeg",
+  },
+  {
+    id: 6,
+    title: "Mesjid",
+    img: "7.jpeg",
+  },
+];
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
-  const id = searchParams.get('id');
-  if(id){
-    const image = imagex.find((img) => img.id === Number(id));
-    if(image){
-      return NextResponse.json({status : 200, massess : 'Success', data : image});
+  const id = searchParams.get("id");
+
+  if (id) {
+    const image = fasilitas.find((item) => item.id === Number(id));
+    if (image) {
+      return NextResponse.json({
+        status: 200,
+        message: "Success",
+        data: image,
+      });
     }
-    return NextResponse.json({status : 404, massess : 'not found', data : {}});
+    return NextResponse.json({
+      status: 404,
+      message: "Not found",
+      data: {},
+    });
   }
-  return NextResponse.json({status : 200, massess : ' not found', data : imagex});
+
+  return NextResponse.json({
+    status: 200,
+    message: "Success",
+    data: fasilitas,
+  });
 }

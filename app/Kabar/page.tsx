@@ -8,6 +8,8 @@ import 'swiper/css/navigation';
 import { Navigation, Pagination } from 'swiper/modules';
 import Link from 'next/link';
 import { Inter } from 'next/font/google';
+import ContactCompact from '@/components/Content/page';
+import Footer from '@/components/Footer/page';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -42,7 +44,7 @@ const BeritaSection = () => {
   }, []);
 
   return (
-    <section className="bg-[#fdfdff] px-4 py-16 md:px-24 ">
+    <section className="bg-[#fdfdff] px-4 py-20 md:px-24 ">
       <div className="block items-center justify-center mb-10">
         <h3>--- SMAN 17 BONE ----</h3>
         <div >
@@ -94,6 +96,8 @@ const BeritaSection = () => {
           ))}
         </Swiper>
       )}
+      <ContactCompact />
+      <Footer />
     </section>
   );
 };
