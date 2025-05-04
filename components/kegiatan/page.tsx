@@ -1,6 +1,7 @@
 'use client'
 
 import { Inter } from 'next/font/google'
+import Image from 'next/image'
 
 // Mengimpor font Inter
 const inter = Inter({
@@ -14,10 +15,12 @@ export default function Kegiatan() {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="flex flex-col items-center text-center">
-            <img
+            <Image
               src="/img/pak.PNG"
               alt="Kepala Sekolah"
               className="rounded-2xl shadow-lg w-64 h-auto object-cover mb-4"
+              width={200}
+              height={200}
             />
             <h4 className={`text-lg font-semibold text-gray-800 ${inter.className}`}>
               Drs. Budi Santosa

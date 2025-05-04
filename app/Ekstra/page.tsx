@@ -41,7 +41,7 @@ const ekstrakurikulerList = [
   },
 ];
 
-const EkstraCard = ({ title, icon, description, href }: { title: string; icon: any; description: string; href?: string }) => {
+const EkstraCard = ({ title, icon, description, href }: { title: string; icon: React.ReactNode; description: string; href?: string }) => {
   const CardContent = (
     <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl hover:scale-105 transition duration-300">
       <div className="flex items-center justify-center mb-4">

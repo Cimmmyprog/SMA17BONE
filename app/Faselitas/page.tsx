@@ -1,6 +1,6 @@
 import ContactCompact from "@/components/Content/page";
 import Footer from "@/components/Footer/page";
-
+import Image from "next/image";
 interface Faselitas {
   id: number;
   title: string;
@@ -23,10 +23,12 @@ export default async function FasilitasSekolah() {
               key={index}
               className="rounded-2xl overflow-hidden shadow hover:shadow-lg transition"
             >
-              <img
+              <Image
                 src={`http://localhost:3000/img/faselitas/${item.img}`}
                 alt={item.title}
                 className="w-full h-56 object-cover"
+                width={400}
+                height={300}
               />
               <div className="p-4 bg-white">
                 <p className="text-lg font-medium text-center">{item.title}</p>

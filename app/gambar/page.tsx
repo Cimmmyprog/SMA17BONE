@@ -38,10 +38,10 @@ const BeritaSection = () => {
             className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
             <div className="relative w-full h-60 rounded-t-2xl overflow-hidden">
-              <img
+              <Image
                 src={`http://localhost:3000/assets/${berita.image}`}
                 alt={berita.title}
-                fill="string"
+                fill
                 className="object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>

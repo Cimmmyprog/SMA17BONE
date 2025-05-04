@@ -1,5 +1,7 @@
 import ContactCompact from "@/components/Content/page";
+import Footer from "@/components/Footer/page";
 import { Inter } from "next/font/google";
+import Image from "next/image";
 
 const inter = Inter({
   variable: '--font-inter',
@@ -50,10 +52,12 @@ const ProfilSekolah = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Logo Sekolah */}
           <div className="flex justify-center items-center">
-            <img
+            <Image
               src="/img/1.png"
               alt="Logo SMA Suluh"
               className="w-40 h-40 object-contain"
+              width={200}
+              height={200}
             />
           </div>
 
@@ -113,6 +117,7 @@ const ProfilSekolah = () => {
           
         </div>
       <ContactCompact />
+      <Footer/>
     </div>
   );
 };
