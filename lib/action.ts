@@ -1,7 +1,12 @@
 'use server'
 import { writeFile } from "fs/promises";
 import path from "path";
-import {z} from "zod"
+import {z} from "zod" 
+import {prisma} from "./prisma";
+import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
+
+
 
 const UploadSChema =  z.object({
     title:  z.string().min(1),
@@ -18,8 +23,6 @@ const UploadSChema =  z.object({
 
 })
 
-
-
 export const Creatdata = async ( prevState : unknown , formData : FormData) => {
     
     const fromobject = Object.fromEntries(formData.entries());
@@ -33,7 +36,8 @@ if(!validatefile.success){
 }
 
  const file = formData.get("image");
-const { title } = validatefile.data
+const { title } = validatefile.data;
+const {description} = validatefile.data
 
 
 
@@ -41,19 +45,24 @@ const { title } = validatefile.data
         const buffer = Buffer.from(await file.arrayBuffer());
         const filename = file.name.replaceAll(" ","_")
         console.log(filename)
-
         await writeFile(
             path.join(process.cwd(), "public/assets/" + filename),
             buffer
-        )
-        return {massage : "Succes"}
+        );
+       await prisma.post.create({
+            data: {
+                title,
+                description,
+                image : filename
+            },
+          })
+    
     }catch(err){
         console.error('Erro dicont' , err)
         return {message : "gagal"};
-            
-            
-        
     }
+    revalidatePath("/#")
+    redirect("/#")
 }
 
 
