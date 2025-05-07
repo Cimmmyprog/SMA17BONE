@@ -15,7 +15,7 @@ export default async function Gallery() {
          <h3 className="text-2xl font-bold text-center mb-3">kegiatan di SMAN 17 BONE</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {fasilitas && fasilitas.length > 0 ? (
-            fasilitas.map((item) => (
+            fasilitas.map((item : any) => (
               <div
                 key={item.id}
                 className="rounded-2xl overflow-hidden shadow hover:shadow-lg transition"
