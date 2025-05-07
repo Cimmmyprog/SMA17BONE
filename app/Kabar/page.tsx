@@ -76,7 +76,7 @@ const BeritaSection = () => {
               >
                 <div className="relative w-full h-64">
                   <Image
-                    src={`/assets/${berita.image}`}
+                    src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${berita.image}`}
                     alt={berita.title}
                     fill
                     className="object-cover transition-transform "

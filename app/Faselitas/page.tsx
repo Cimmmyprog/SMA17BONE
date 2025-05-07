@@ -24,7 +24,7 @@ export default async function FasilitasSekolah() {
               className="rounded-2xl overflow-hidden shadow hover:shadow-lg transition"
             >
               <Image
-                src={`http://localhost:3000/img/faselitas/${item.img}`}
+                src={`${process.env.NEXT_PUBLIC_API_URL}/img/faselitas/${item.img}`}
                 alt={item.title}
                 className="w-full h-56 object-cover"
                 width={400}

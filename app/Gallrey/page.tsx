@@ -21,7 +21,7 @@ export default async function Gallery() {
                 className="rounded-2xl overflow-hidden shadow hover:shadow-lg transition"
               >
                 <Image
-                  src={`/gallery/${item.url}`}
+                  src={`${process.env.NEXT_PUBLIC_API_URL}/img/gallery/${item.url}`}
                   alt={`Gallery Image ${item.id}`}
                   className="w-full h-56 object-cover"
                   width={400}

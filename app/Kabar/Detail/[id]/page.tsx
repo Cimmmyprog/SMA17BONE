@@ -39,7 +39,7 @@ export default async function Page({ params }: { params : Promise<{id: string}>}
             <p className="text-sm text-gray-500 mb-6">01 Januari 2024</p>
             <div className="relative w-full h-[400px] mb-8 rounded-lg overflow-hidden shadow-md">
               <Image
-                src={`/assets/${berita.image}`}
+                src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${berita.image}`}
                 alt={berita.title}
                 fill
                 className="object-cover"
