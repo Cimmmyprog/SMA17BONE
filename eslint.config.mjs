@@ -17,10 +17,7 @@ const eslintConfig = [
 
   // Override or disable rules here
   {
-    rules: {
-      'react/no-unescaped-entities': 'off',
-      '@next/next/no-page-custom-font': 'off',
-    },
+    
   },
 ]
 

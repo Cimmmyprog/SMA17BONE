@@ -2,6 +2,7 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'
 import { Inter } from 'next/font/google'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -42,8 +43,7 @@ export default function Navbar() {
         <div className="flex h-[69px] items-center justify-between">
           {/* Logo dan mobile button */}
           <Link href={'/'} className="flex items-center">
-            
-            <img src="/img/1.png" alt="Logo" className="h-8 w-auto mr-2" />
+            <Image src="/img/1.png" alt="Logo" className="h-8 w-auto mr-2" width={32} height={32} />
             <span className={`text-lg font-bold text-gray-800 ${inter.variable}`}>SMAN 17 BONE</span>
           </Link>
 

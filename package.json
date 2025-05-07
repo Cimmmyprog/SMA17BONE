@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "start": "next start",
-    "build": "NEXT_DISABLE_ESLINT=true next build",
+    "build": "set NEXT_DISABLE_ESLINT=true && next build",
     "lint": "next lint"
   },
   "dependencies": {
