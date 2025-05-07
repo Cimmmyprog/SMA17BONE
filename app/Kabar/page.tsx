@@ -26,10 +26,12 @@ interface Berita {
 
 const BeritaSection = () => {
   const [beritaList, setBeritaList] = useState<Berita[]>([]);
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 
+                    (typeof window !== 'undefined' ? window.location.origin : 'https://sma-17-bone-ilct.vercel.app');
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`, {
+        const res = await fetch(`${API_BASE_URL}/api/posts`, {
           cache: 'no-store',
         });
         const data = await res.json();
@@ -76,7 +78,7 @@ const BeritaSection = () => {
               >
                 <div className="relative w-full h-64">
                   <Image
-                    src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${berita.image}`}
+                    src={`${API_BASE_URL}/assets/${berita.image}`}
                     alt={berita.title}
                     fill
                     className="object-cover transition-transform "

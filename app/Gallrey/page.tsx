@@ -3,7 +3,9 @@ import ContactCompact from "@/components/Content/page";
 import Footer from "@/components/Footer/page";
 
 export default async function Gallery() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/gallery`, {
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 
+                    (typeof window !== 'undefined' ? window.location.origin : 'https://sma-17-bone-ilct.vercel.app');
+  const res = await fetch(`${API_BASE_URL}/api/gallery`, {
     cache: "no-store",
   });
   const data = await res.json();
@@ -21,7 +23,7 @@ export default async function Gallery() {
                 className="rounded-2xl overflow-hidden shadow hover:shadow-lg transition"
               >
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_API_URL}/img/gallery/${item.url}`}
+                  src={`${API_BASE_URL}/img/gallery/${item.url}`}
                   alt={`Gallery Image ${item.id}`}
                   className="w-full h-56 object-cover"
                   width={400}
