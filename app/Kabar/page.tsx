@@ -31,7 +31,7 @@ const BeritaSection = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/posts', {
+        const res = await fetch('/api/posts', {
           cache: 'no-store',
         });
         const data = await res.json();
