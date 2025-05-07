@@ -3,7 +3,7 @@ import ContactCompact from "@/components/Content/page";
 import Footer from "@/components/Footer/page";
 
 export default async function Gallery() {
-  const res = await fetch("http://localhost:3000/api/gallery", {
+  const res = await fetch("/api/gallery", {
     cache: "no-store",
   });
   const data = await res.json();

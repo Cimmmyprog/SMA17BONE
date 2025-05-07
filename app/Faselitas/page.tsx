@@ -7,7 +7,7 @@ interface Faselitas {
   img : string;
 }
 export default async function FasilitasSekolah() {
-  const res = await fetch("http://localhost:3000/api/img", {
+  const res = await fetch("/api/img", {
     cache: "no-store",
   });
   const json = await res.json();
