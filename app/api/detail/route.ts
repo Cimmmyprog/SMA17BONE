@@ -14,9 +14,8 @@ export const GET = async (request: NextRequest) => {
       where: {
         id: Number(id),
       },
-      orderBy: { creatdAt: 'desc' },
+      orderBy: { createdAt: 'desc' },
     });
-
     if (data.length > 0) {
       return NextResponse.json({ status: 200, message: 'Success', data });
     }
