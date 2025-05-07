@@ -26,12 +26,11 @@ interface Berita {
 
 const BeritaSection = () => {
   const [beritaList, setBeritaList] = useState<Berita[]>([]);
-  
-
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/`, {
+        const res = await fetch(`${baseUrl}/api/posts/`, {
           cache: 'no-store',
         });
         const data = await res.json();

@@ -7,7 +7,8 @@ interface Faselitas {
   img : string;
 }
 export default async function FasilitasSekolah() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/img`, {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+  const res = await fetch(`${baseUrl}/api/img`, {
     cache: "no-store",
   });
   const json = await res.json();
