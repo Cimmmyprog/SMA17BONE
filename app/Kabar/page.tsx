@@ -40,7 +40,7 @@ const BeritaSection = () => {
       } 
     };
     fetchData();
-  }, []);
+  }, [baseUrl]);
   return (
     
     <div>

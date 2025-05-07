@@ -1,5 +1,5 @@
 'use client';
-import { SubmitButton } from "@/components/button";
+import { SubmitButton } from "@/components/Button";
 import { Creatdata } from "@/lib/action";
 import { useActionState } from "react";
 
