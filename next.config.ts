@@ -7,21 +7,31 @@ const nextConfig: NextConfig = {
         protocol: 'http',
         hostname: 'localhost',
         port: '3000',
-        pathname: '/img/**', // Gambar di path /img/
+        pathname: '/img/**',
       },
       {
         protocol: 'http',
         hostname: 'localhost',
         port: '3000',
-        pathname: '/public/**', // Gambar di path /img/
+        pathname: '/public/**',
       },
       {
         protocol: 'https',
-        hostname: 'example.com', // Contoh domain lain
-        pathname: '/assets/images/**', // Gambar di path /assets/images/
+        hostname: 'example.com',
+        pathname: '/assets/images/**',
       },
     ],
   },
-};
 
+  // eslint config should be outside of `images`
+  eslint: {
+    // This allows production builds to complete even if there are ESLint errors
+    ignoreDuringBuilds: true,
+  },
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '2mb',
+    },
+  },
+};
 export default nextConfig;

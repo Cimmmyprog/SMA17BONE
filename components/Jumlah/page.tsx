@@ -47,7 +47,7 @@ export default function StatSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`group bg-gradient-to-br ${item.color} p-4 rounded-lg shadow hover:shadow-md transition-all duration-300 flex flex-col items-center`}
+              className={`group bg-gradient-to-br ${item.color} p-4 shadow hover:shadow-md transition-all duration-300 flex flex-col items-center`}
             >
               <div className="mb-1">{item.icon}</div>
               <h3 className="text-2xl font-bold text-gray-800">

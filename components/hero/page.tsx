@@ -7,6 +7,16 @@ import {
   FaChalkboardTeacher,
   FaBookOpen
 } from 'react-icons/fa'
+import { useEffect, useState } from 'react'
+
+// Swiper imports
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination, Autoplay, EffectFade } from 'swiper/modules'
+
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/effect-fade'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -14,11 +24,61 @@ const inter = Inter({
 })
 
 export default function AlternativeHero() {
-  return (
-    <section className="relative bg-cover bg-center bg-no-repeat py-20 sm:py-16 bg-[url('/img/4.jpg')]">
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+  const [mounted, setMounted] = useState(false)
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Background images for slider
+  const bgImages = [
+    '/img/4.jpg',
+    '/img/5.jpg',
+    '/img/6.jpg',
+  ]
+
+  return (
+    <section className="relative h-1/2 overflow-hidden">
+      {/* Fixed height to ensure Swiper works properly */}
+      <div className="absolute inset-0 h-full w-full">
+        {mounted ? (
+          <Swiper
+            modules={[Pagination, Autoplay, EffectFade]}
+            effect="fade"
+            pagination={{ 
+              clickable: true,
+              bulletActiveClass: 'swiper-pagination-bullet-active bg-indigo-600'
+            }}
+            autoplay={{ 
+              delay: 4000, 
+              disableOnInteraction: false 
+            }}
+            loop={true}
+            className="h-full w-full"
+            slidesPerView={1}
+          >
+            {bgImages.map((img, index) => (
+              <SwiperSlide key={index} className="h-full w-full">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                  style={{ backgroundImage: `url(${img})` }}
+                >
+                  <div className="absolute inset-0 bg-black/50 backdrop-blur-xs"></div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url('/img/4.jpg')" }}
+          >
+            <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+          </div>
+        )}
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 py-20 sm:py-16 h-full flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
           <div className="md:py-5 space-y-8 z-10">
             <span className="inline-block rounded-full bg-indigo-200 px-4 py-1 text-sm font-medium text-indigo-900 shadow">

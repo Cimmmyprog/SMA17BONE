@@ -20,7 +20,6 @@ const navigation = [
     items: [
       { name: 'Ekstrakurikuler', href: '/Ekstra' },
       { name: 'Galeri & News', href: '/Gallrey' },
-      { name: 'Fasilitas', href: '#' }
     ]
   },
   { name: 'Profil', href: '/Profil', current: false }

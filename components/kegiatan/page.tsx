@@ -16,7 +16,7 @@ export default function Kegiatan() {
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="flex flex-col items-center text-center">
             <Image
-              src="/img/pak.PNG"
+              src="/img/12.jpg"
               alt="Kepala Sekolah"
               className="rounded-2xl shadow-lg w-64 h-auto object-cover mb-4"
               width={200}

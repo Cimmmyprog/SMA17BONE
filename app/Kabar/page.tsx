@@ -26,12 +26,12 @@ interface Berita {
 
 const BeritaSection = () => {
   const [beritaList, setBeritaList] = useState<Berita[]>([]);
-
+  
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch('/api/posts', {
+        const res = await fetch('http://localhost:3000/api/posts', {
           cache: 'no-store',
         });
         const data = await res.json();
@@ -42,9 +42,10 @@ const BeritaSection = () => {
     };
     fetchData();
   }, []);
-
   return (
-    <section className="bg-[#fdfdff] px-4 py-20 md:px-24 ">
+    
+    <div>
+      <section className="bg-[#fdfdff] px-4 py-20 md:px-24 ">
       <div className="block items-center justify-center mb-10">
         <h3>--- SMAN 17 BONE ----</h3>
         <div >
@@ -72,7 +73,7 @@ const BeritaSection = () => {
           {beritaList.map((berita) => (
             <SwiperSlide key={berita.id}>
               <Link
-                href={`/Detail/${berita.id}`}
+                href={`/Kabar/Detail/${berita.id}`}
                 className="block bg-white shadow-md overflow-hidden  group"
               >
                 <div className="relative w-full h-64">
@@ -96,9 +97,11 @@ const BeritaSection = () => {
           ))}
         </Swiper>
       )}
-      <ContactCompact />
-      <Footer />
+      
     </section>
+    <ContactCompact />
+      <Footer />
+    </div>
   );
 };
 

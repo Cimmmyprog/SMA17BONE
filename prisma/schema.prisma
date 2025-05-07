@@ -1,6 +1,6 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../lib/generated/prisma"
+  output   = "./lib/generated/prisma"
 }
 
 datasource db {
@@ -8,17 +8,25 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Post{
-  id          Int      @id @default(autoincrement())
+model Post {
+  id          Int       @id @default(autoincrement())
   title       String
   image       String
   description String
-  creatdAt    DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  galleries   Gallery[] 
+}
+
+model Gallery {
+  id     Int    @id @default(autoincrement())
+  url    String
+  post   Post   @relation(fields: [postId], references: [id])
+  postId Int
 }
 
 model playing_with_neon {
-  id    Int    @id @default(autoincrement())
+  id    Int     @id @default(autoincrement())
   name  String
-  value Float? @db.Real
+  value Float?  @db.Real
 }
