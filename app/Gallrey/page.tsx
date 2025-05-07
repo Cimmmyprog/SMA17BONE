@@ -3,8 +3,7 @@ import ContactCompact from "@/components/Content/page";
 import Footer from "@/components/Footer/page";
 
 export default async function Gallery() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-  const res = await fetch(`${baseUrl}/api/gallery`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/gallery`, {
     cache: "no-store",
   });
   const data = await res.json();
