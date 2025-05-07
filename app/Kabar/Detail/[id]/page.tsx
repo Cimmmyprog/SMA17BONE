@@ -15,7 +15,7 @@ interface iiBerita {
 export default async function Page({ params }: { params : Promise<{id: string}>}){
   const {id} = await params;
   console.log(id);
-    const res = await fetch(`http://localhost:3000/api/detail?id=${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/detail?id=${id}`, {
       cache: 'no-store',
     });
 
