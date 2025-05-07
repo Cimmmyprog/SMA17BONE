@@ -84,7 +84,7 @@ export async function createData(prevState: any, formData: { get: (arg0: string)
       return { 
         success: false,
         message: "Database error: Failed to save gallery entry", 
-        errorDetails: dbError.message 
+        
       };
     }
     
@@ -96,7 +96,7 @@ export async function createData(prevState: any, formData: { get: (arg0: string)
     return { 
       success: false,
       message: "Failed to process or save data", 
-      errorDetails: err.message 
+   
     };
   }
 }
