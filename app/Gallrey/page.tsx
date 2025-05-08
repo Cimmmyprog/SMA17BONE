@@ -42,7 +42,7 @@ export default function Gallery() {
             Galeri
           </h2>
           <p className="mt-2 text-lg text-gray-600">
-            Kegiatan di SMAN 17 BONE
+            Kegiatan di SMAN 17 BONE 
           </p>
         </div>
 
@@ -77,8 +77,8 @@ export default function Gallery() {
                     }}
                   >
                     <Image
-                      src={`public/gallery/${item.url}`}
-                      alt={`Gallery Image ${item.id}`}
+                      src={`/img/gallery/${item.url}`}
+                      alt={`Gallery Image`}
                       width={600}
                       height={400}
                       className="w-full h-64 object-cover"
