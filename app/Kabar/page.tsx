@@ -47,7 +47,7 @@ const BeritaSection = () => {
     <div>
       <section className="bg-[#fdfdff] px-4 py-20 md:px-24 ">
       <div className="block items-center justify-center mb-10">
-        <h3>--- SMAN 17 BONE ----</h3>
+        <h3>---- SMAN 17 BONE ----</h3>
         <div >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">
           NEWS SEKOLAH
