@@ -1,6 +1,7 @@
 generator client {
   provider = "prisma-client-js"
   output   = "./lib/generated/prisma"
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
 }
 
 datasource db {
@@ -15,7 +16,7 @@ model Post {
   description String
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
-  galleries   Gallery[] 
+  galleries   Gallery[]
 }
 
 model Gallery {
@@ -26,7 +27,7 @@ model Gallery {
 }
 
 model playing_with_neon {
-  id    Int     @id @default(autoincrement())
+  id    Int    @id @default(autoincrement())
   name  String
-  value Float?  @db.Real
+  value Float? @db.Real
 }

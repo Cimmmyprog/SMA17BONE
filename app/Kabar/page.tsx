@@ -41,7 +41,7 @@ const BeritaSection = () => {
       } 
     };
     fetchData();
-  }, []);
+  }, [API_BASE_URL]);
   return (
     
     <div>
