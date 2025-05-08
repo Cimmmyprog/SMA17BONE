@@ -77,7 +77,7 @@ export default function Gallery() {
                     }}
                   >
                     <Image
-                      src={`/img/gallery/${item.url}`}
+                      src={`public/gallery/${item.url}`}
                       alt={`Gallery Image ${item.id}`}
                       width={600}
                       height={400}
