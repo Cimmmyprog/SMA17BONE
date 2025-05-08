@@ -7,9 +7,7 @@ interface Faselitas {
   img : string;
 }
 export default async function FasilitasSekolah() {
-  const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 
-                    (typeof window !== 'undefined' ? window.location.origin : 'https://sma-17-bone-ilct.vercel.app');
-  const res = await fetch(`${API_BASE_URL}/api/img`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/img`, {
     cache: "no-store",
   });
   const json = await res.json();

@@ -9,10 +9,8 @@ interface Berita {
   description: string;
   image: string;
 }
-
 const BeritaSection = () => {
   const [beritaList, setBeritaList] = useState<Berita[]>([]);
-
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`, {
