@@ -23,10 +23,8 @@ interface Berita {
   description: string;
   image: string;
 }
-
 const BeritaSection = () => {
   const [beritaList, setBeritaList] = useState<Berita[]>([]);
-  
   useEffect(() => {
     const fetchData = async () => {
       try {
