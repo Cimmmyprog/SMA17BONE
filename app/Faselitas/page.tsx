@@ -7,8 +7,9 @@ interface Faselitas {
   img : string;
 }
 export default async function FasilitasSekolah() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/img`, {
+  const res = await fetch(`/api/img`, {
     cache: "no-store",
+    method: "GET",
   });
   const json = await res.json();
   const fasilitas = json.data;
@@ -24,7 +25,7 @@ export default async function FasilitasSekolah() {
               className="rounded-2xl overflow-hidden shadow hover:shadow-lg transition"
             >
               <Image
-                src={`${process.env.NEXT_PUBLIC_API_URL}/img/faselitas/${item.img}`}
+                src={`/img/faselitas/${item.img}`}
                 alt={item.title}
                 className="w-full h-56 object-cover"
                 width={400}

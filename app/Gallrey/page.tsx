@@ -3,8 +3,9 @@ import ContactCompact from "@/components/Content/page";
 import Footer from "@/components/Footer/page";
 
 export default async function Gallery() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/gallery`, {
+  const res = await fetch(`/api/gallery`, {
     cache: "no-store",
+    method: "GET",
   });
   const data = await res.json();
   const fasilitas = data.data;
@@ -21,7 +22,7 @@ export default async function Gallery() {
                 className="rounded-2xl overflow-hidden shadow hover:shadow-lg transition"
               >
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_API_URL}/img/gallery/${item.url}`}
+                  src={`/img/gallery/${item.url}`}
                   alt={`Gallery Image ${item.id}`}
                   className="w-full h-56 object-cover"
                   width={400}

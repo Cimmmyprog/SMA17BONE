@@ -13,8 +13,9 @@ const BeritaSection = () => {
   const [beritaList, setBeritaList] = useState<Berita[]>([]);
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`, {
+      const res = await fetch(`/api/posts`, {
         cache: 'no-store',
+        method: 'GET',
       });
       const data = await res.json();
       setBeritaList(data.data);
@@ -37,7 +38,7 @@ const BeritaSection = () => {
           >
             <div className="relative w-full h-60 rounded-t-2xl overflow-hidden">
               <Image
-                src={`http://localhost:3000/assets/${berita.image}`}
+                src={`/assets/${berita.image}`}
                 alt={berita.title}
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-500"

@@ -30,8 +30,9 @@ const BeritaSection = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`, {
+        const res = await fetch(`/api/posts`, {
           cache: 'no-store',
+          method : 'GET',
         });
         const data = await res.json();
         setBeritaList(data.data);
@@ -77,7 +78,7 @@ const BeritaSection = () => {
               >
                 <div className="relative w-full h-64">
                   <Image
-                    src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${berita.image}`}
+                    src={`/assets/${berita.image}`}
                     alt={berita.title}
                     fill
                     className="object-cover transition-transform "
