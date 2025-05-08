@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 interface Berita {
   id: number;
   title: string;
@@ -22,7 +23,7 @@ const BeritaSection = () => {
   }, []);
 
   return (
-    <section className="px-4 py-12 md:px-20 bg-gray-50">
+    <section className="px-4 py-12 md:px-20 mt-16 bg-gray-50">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Berita Terbaru</h2>
         <p className="text-gray-600 text-lg">Ikuti kabar dan update terbaru dari kami</p>
@@ -30,10 +31,9 @@ const BeritaSection = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {beritaList.map((berita) => (
-          <div
-            key={berita.id}
+          <Link href={`/kabar/detail/${berita.id}`} key={berita.id}
             className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
-          >
+            >
             <div className="relative w-full h-60 rounded-t-2xl overflow-hidden">
               <Image
                 src={`/assets/${berita.image}`}
@@ -46,7 +46,7 @@ const BeritaSection = () => {
               <h3 className="text-xl font-semibold text-gray-800 mb-2">{berita.title}</h3>
               <p className="text-gray-600 text-sm">{berita.description}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

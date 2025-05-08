@@ -2,119 +2,118 @@
 
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
-import {
-  FaSchool,
-  FaChalkboardTeacher,
-  FaBookOpen
-} from 'react-icons/fa'
 import { useEffect, useState } from 'react'
+import { 
+  FaSchool, 
+  FaChalkboardTeacher, 
+  FaBookOpen,
+  FaPrayingHands 
+} from 'react-icons/fa'
 
-// Swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay, EffectFade } from 'swiper/modules'
 
-// Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-fade'
 
-const inter = Inter({
-  subsets: ['latin'],
-  weight: '400',
-})
+const inter = Inter({ subsets: ['latin'], weight: '400' })
 
-export default function AlternativeHero() {
+export default function EnhancedHero() {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
   }, [])
 
-  // Background images for slider
   const bgImages = [
-    '/img/4.jpg',
-    '/img/5.jpg',
-    '/img/6.jpg',
+    '/img/4.jpg', 
+    '/img/5.jpg', 
+    '/img/6.jpg'
   ]
 
   return (
-    <section className="relative h-1/2 overflow-hidden">
-      {/* Fixed height to ensure Swiper works properly */}
+    <section className="relative h-screen overflow-hidden pt-6 sm:mt-[70px] mt-[70px]">
+      {/* Background slider */}
       <div className="absolute inset-0 h-full w-full">
         {mounted ? (
           <Swiper
             modules={[Pagination, Autoplay, EffectFade]}
             effect="fade"
-            pagination={{ 
+            pagination={{
               clickable: true,
               bulletActiveClass: 'swiper-pagination-bullet-active bg-indigo-600'
             }}
-            autoplay={{ 
-              delay: 4000, 
-              disableOnInteraction: false 
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false
             }}
             loop={true}
             className="h-full w-full"
             slidesPerView={1}
           >
             {bgImages.map((img, index) => (
-              <SwiperSlide key={index} className="h-full w-full">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              <SwiperSlide key={index}>
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url(${img})` }}
                 >
-                  <div className="absolute inset-0 bg-black/50 backdrop-blur-xs"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40" />
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
         ) : (
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          <div
+            className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: "url('/img/4.jpg')" }}
           >
-            <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40" />
           </div>
         )}
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 py-20 sm:py-16 h-full flex items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
-          <div className="md:py-5 space-y-8 z-10">
-            <span className="inline-block rounded-full bg-indigo-200 px-4 py-1 text-sm font-medium text-indigo-900 shadow">
-              Open House 2025
-            </span>
-
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl leading-tight">
-              Bergabunglah dengan{' '}
-              <span className="text-indigo-400">SMA Harapan Bangsa</span>
+      {/* Main content */}
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-20 h-full flex items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-8">
+            <h1 className="text-white text-5xl sm:text-6xl lg:text-6xl font-bold leading-tight">
+              Masa Depan Cerah 
+              <span className="block text-indigo-400">Dimulai dari Sini</span>
             </h1>
 
-            <p className={`text-lg text-gray-300 max-w-xl ${inter.className}`}>
-              Kami menyediakan kurikulum inovatif, fasilitas modern, dan lingkungan inspiratif untuk mengembangkan potensi siswa.
+            <p className={`text-lg text-gray-300 max-w-2xl ${inter.className}`}>
+              Bergabunglah dengan <strong className="text-indigo-300">SMA Harapan Bangsa</strong> — 
+              sekolah inovatif yang menghadirkan kurikulum digital, pengajar profesional, dan 
+              lingkungan belajar modern untuk generasi emas Indonesia.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <a
                 href="#registrasi"
-                className="inline-block rounded-lg bg-indigo-600 px-6 py-3 text-white text-base font-medium hover:bg-indigo-700 transition duration-300 shadow"
+                className="inline-block rounded-lg bg-indigo-600 px-6 py-3 text-white font-semibold hover:bg-indigo-700 transition-all duration-300 shadow-lg"
               >
                 Registrasi Sekarang
               </a>
               <Link
                 href="/Profil"
-                className="inline-block rounded-lg border border-indigo-400 px-6 py-3 text-indigo-100 text-base font-medium hover:bg-indigo-600 hover:border-indigo-600 hover:text-white transition duration-300"
+                className="inline-block rounded-lg border border-indigo-300 px-6 py-3 text-indigo-100 hover:bg-indigo-600 hover:border-indigo-600 hover:text-white transition-all duration-300"
               >
                 Pelajari Lebih Lanjut
               </Link>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-start space-x-4">
-                  <feature.icon className="h-6 w-6 text-indigo-400 mt-1" />
+                <div
+                  key={index}
+                  className="flex items-start gap-4 hover:bg-white/10 p-4 rounded-lg transition-all duration-300"
+                >
+                  <div className="bg-indigo-600/20 p-2 rounded-lg">
+                    <feature.icon className="h-5 w-5 text-indigo-400" />
+                  </div>
                   <div>
-                    <h4 className="text-md font-semibold text-gray-100">{feature.title}</h4>
+                    <h4 className="text-md font-semibold text-white">{feature.title}</h4>
                     <p className="text-sm text-gray-300">{feature.description}</p>
                   </div>
                 </div>
@@ -122,7 +121,62 @@ export default function AlternativeHero() {
             </div>
           </div>
 
-          <div className="hidden lg:block" aria-hidden="true" />
+          {/* Right side content */}
+          <div className="hidden lg:block">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-xl">
+              <div className="flex justify-between items-center mb-6">
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 bg-indigo-600 rounded-full flex items-center justify-center">
+                    <FaSchool className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold">SMAN 17 BONE</h4>
+                    <p className="text-xs text-indigo-200">Pendidikan Berkualitas</p>
+                  </div>
+                </div>
+                <span className="text-xs bg-green-500/20 text-green-300 px-3 py-1 rounded-full">
+                  Pendaftaran Dibuka
+                </span>
+              </div>
+              
+              <div className="space-y-4 mb-6">
+                <div>
+                  <h3 className="text-white font-semibold mb-2">Keunggulan Kami:</h3>
+                  <ul className="text-gray-300 text-sm space-y-2">
+                    <li className="flex items-center gap-2">
+                      <div className="h-1 w-1 bg-indigo-400 rounded-full"></div>
+                      <span>nilai sempurna</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="h-1 w-1 bg-indigo-400 rounded-full"></div>
+                      <span>pendidikan berkualitas</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="h-1 w-1 bg-indigo-400 rounded-full"></div>
+                      <span>mengikuti ajaran agama </span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="h-1 w-1 bg-indigo-400 rounded-full"></div>
+                      <span>Pembelajaran interaktif</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="bg-indigo-600/20 p-4 rounded-lg">
+                  <p className="text-sm text-gray-200">
+                    SMA Harapan Bangsa mengubah cara belajar menjadi lebih menyenangkan dan relevan dengan dunia kerja.
+                  </p>
+                  <div className="mt-3 flex items-center gap-2">
+                    <div className="h-8 w-8 bg-indigo-600 rounded-full"></div>
+                    <div>
+                      <p className="text-white text-xs font-semibold">Drs.H.MASTAN.M.pd</p>
+                      <p className="text-xs text-gray-400">Alumni 2023</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -133,21 +187,21 @@ const features = [
   {
     icon: FaSchool,
     title: 'Fasilitas Lengkap',
-    description: 'Laboratorium, perpustakaan, dan ruang multimedia.'
+    description: 'Laboratorium modern dan perpustakaan digital.'
   },
   {
     icon: FaChalkboardTeacher,
-    title: 'Tenaga Pengajar Profesional',
-    description: 'Guru berkualitas dengan pengalaman internasional.'
+    title: 'Pengajar Profesional',
+    description: 'Guru berpengalaman dan berkualifikasi tinggi.'
   },
   {
     icon: FaBookOpen,
     title: 'Kurikulum Digital',
-    description: 'Pembelajaran blended learning berbasis teknologi.'
+    description: 'Pembelajaran dengan teknologi terkini.'
   },
   {
-    icon: FaSchool,
-    title: 'Ekstrakurikuler',
-    description: 'Beragam kegiatan untuk minat dan bakat siswa.'
+    icon: FaPrayingHands,
+    title: 'Pendidikan Agama',
+    description: 'Pembinaan karakter dan akhlak berbasis agama.'
   }
 ]

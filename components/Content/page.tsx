@@ -9,17 +9,17 @@ import {
 
 export default function ContactCompact() {
   return (
-    <section className="bg-gradient-to-br from-white to-gray-100 dark:from-gray-900 dark:to-gray-800 py-20 px-6">
+    <section className="bg-white py-20 px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
 
         {/* Info Kontak + Google Maps */}
         <div className="space-y-8">
           <div>
-            <h3 className="text-4xl font-extrabold text-gray-800 dark:text-white mb-2">SMAN 17 BONE</h3>
-            <p className="text-gray-500 dark:text-gray-400 text-sm">Sekolah Menengah Atas Negeri di Bone, Sulawesi Selatan</p>
+            <h3 className="text-4xl font-extrabold text-gray-800 mb-2">SMAN 17 BONE</h3>
+            <p className="text-gray-600 text-sm">Sekolah Menengah Atas Negeri di Bone, Sulawesi Selatan</p>
           </div>
 
-          <div className="overflow-hidden rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+          <div className="overflow-hidden rounded-2xl shadow-lg border border-gray-200">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d819.4736941512704!2d119.97374903480092!3d-4.599063224773174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sid!2sid!4v1746165081543!5m2!1sid!2sid"
               width="100%"
@@ -32,7 +32,7 @@ export default function ContactCompact() {
             ></iframe>
           </div>
 
-          <div className="space-y-3 text-gray-600 dark:text-gray-300 text-base">
+          <div className="space-y-3 text-gray-700 text-base">
             <div className="flex items-center gap-3">
               <FaMapMarkerAlt className="text-blue-600" />
               Jl. Pendidikan No.123, Bone, Sulawesi Selatan
@@ -61,31 +61,31 @@ export default function ContactCompact() {
         </div>
 
         {/* Form Kontak */}
-        <form className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 space-y-6">
+        <form className="bg-white p-8 rounded-2xl shadow-xl border border-gray-200 space-y-6">
           <div>
-            <label className="block text-sm text-gray-700 dark:text-gray-300 mb-1">Nama</label>
+            <label className="block text-sm text-gray-700 mb-1">Nama</label>
             <input
               type="text"
               placeholder="Nama lengkap"
-              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-sm dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
           <div>
-            <label className="block text-sm text-gray-700 dark:text-gray-300 mb-1">Email</label>
+            <label className="block text-sm text-gray-700 mb-1">Email</label>
             <input
               type="email"
               placeholder="Alamat email"
-              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-sm dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
           <div>
-            <label className="block text-sm text-gray-700 dark:text-gray-300 mb-1">Pesan</label>
+            <label className="block text-sm text-gray-700 mb-1">Pesan</label>
             <textarea
               rows={5}
               placeholder="Tulis pesan Anda di sini..."
-              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-sm dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>

@@ -23,7 +23,7 @@ export default function Kegiatan() {
               height={200}
             />
             <h4 className={`text-lg font-semibold text-gray-800 ${inter.className}`}>
-              Drs. Budi Santosa
+            Drs.H.MASTAN.M.pd
             </h4>
             <p className={`text-sm text-gray-500 ${inter.className}`}>Kepala Sekolah</p>
           </div>
@@ -46,9 +46,7 @@ export default function Kegiatan() {
               Website ini kami hadirkan sebagai sarana informasi, komunikasi, dan kolaborasi antara sekolah dengan siswa,
               orang tua, alumni, serta masyarakat luas. Harapan kami, website ini dapat menjadi jembatan yang
               memperkuat transparansi dan keterbukaan informasi pendidikan di SMAN 17 BONE.
-              <br /><br />
-              Demikian yang dapat kami sampaikan. Semoga kehadiran website ini dapat memberikan manfaat yang
-              sebesar-besarnya bagi seluruh pengguna dan mendukung kemajuan pendidikan di sekolah kita tercinta.
+              
             </p>
           </div>
         </div>
