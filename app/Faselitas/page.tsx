@@ -94,7 +94,7 @@ export default function FasilitasSekolah() {
               >
                 <div className="relative w-full h-56">
                   <Image
-                    src={`/img/fasilitas/${item.img}`}
+                    src={`/img/faselitas/${item.img}`}
                     alt={item.title}
                     className="object-cover"
                     fill
