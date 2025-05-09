@@ -91,6 +91,7 @@ export default function EnhancedHero() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="https://spmb.sulselprov.go.id/"
+                target='_blank'
                 className="inline-block rounded-lg bg-indigo-600 px-6 py-3 text-white font-semibold hover:bg-indigo-700 transition-all duration-300 shadow-lg"
               >
                 Registrasi Sekarang
