@@ -13,7 +13,7 @@ const inter = Inter({
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
-  { name: 'FasilitasD ', href: '/Faselitas', current: false },
+  { name: 'Fasilitas ', href: '/Faselitas', current: false },
   {
     name: 'Program',
     dropdown: true,
