@@ -22,11 +22,11 @@ const ProfilSekolah = () => {
     ["NDS", "A.04044002"],
     ["IOS", "Kep. 81/I01.G4/1988"],
     ["NSS", "302016304007"],
-    ["NPWP", "13941570017"],
+    ["NPWP", "40302665"],
     ["Akreditasi", 'Peringkat "B" dengan nilai 97 (Unggul)'],
     ["NPSN / NIS", "20107331 / 30014 / 302007"],
     ["Website", "----"],
-    ["Didirikan Tahun", "1 Januari 1976"],
+    ["Didirikan Tahun", "21 Desember 2000"],
     ["Nomor Rekening Yayasan", "0005314003 A.N Holtikultura"],
     ["Bank", "BNI Cabang Fatmawati"],
     [
