@@ -45,7 +45,7 @@ export default function EnhancedHero() {
               bulletActiveClass: 'swiper-pagination-bullet-active bg-indigo-600'
             }}
             autoplay={{
-              delay: 5000,
+              delay: 2000,
               disableOnInteraction: false
             }}
             loop={true}
