@@ -6,7 +6,7 @@ import Image from 'next/image'
 // Mengimpor font Inter
 const inter = Inter({
   subsets: ['latin'],
-  weight: '400',
+  weight: '500',
 })
 
 export default function Kegiatan() {
@@ -30,7 +30,7 @@ export default function Kegiatan() {
 
           <div>
             <h3 className={`text-xl font-semibold text-gray-800 mb-4 ${inter.className}`}>Assalamu{''}alaikum Wr. Wb.</h3>
-            <p className={`text-gray-600 ${inter.className}`}>
+            <p className={`text-gray-600 max-w-3xl mx-auto ${inter.className}`}>
               Puji syukur kami panjatkan ke hadirat Allah SWT atas limpahan rahmat dan hidayah-Nya, sehingga dengan
               kerjasama yang baik antara sekolah dan para alumni, Website <strong>SMAN 17 BONE</strong> kini telah dapat
               dibangun dan dikembangkan.

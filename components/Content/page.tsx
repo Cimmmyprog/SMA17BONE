@@ -43,7 +43,7 @@ export default function ModernContactInfo() {
   const contactInfo = [
     {
       title: "Alamat",
-      content: "Jl. Pendidikan No.123, Bone",
+      content: "jl.poros maros - soppeng, lalebata , kec.lamuru, kab.bone sulawesi selatan",
       icon: <FaMapMarkerAlt size={18} />,
       bgColor: "bg-blue-100",
       iconColor: "text-blue-600"

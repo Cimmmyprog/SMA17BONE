@@ -74,7 +74,7 @@ export default function EnhancedHero() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-20 h-full flex items-center">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8 py-16 h-full flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <h1 className="text-white text-5xl sm:text-6xl lg:text-6xl font-bold leading-tight">
@@ -83,18 +83,18 @@ export default function EnhancedHero() {
             </h1>
 
             <p className={`text-lg text-gray-300 max-w-2xl ${inter.className}`}>
-              Bergabunglah dengan <strong className="text-indigo-300">SMA Harapan Bangsa</strong> — 
+              Bergabunglah dengan <strong className="text-indigo-300">SMAN 17 BONE</strong> — 
               sekolah inovatif yang menghadirkan kurikulum digital, pengajar profesional, dan 
               lingkungan belajar modern untuk generasi emas Indonesia.
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <a
-                href="#registrasi"
+              <Link
+                href="https://spmb.sulselprov.go.id/"
                 className="inline-block rounded-lg bg-indigo-600 px-6 py-3 text-white font-semibold hover:bg-indigo-700 transition-all duration-300 shadow-lg"
               >
                 Registrasi Sekarang
-              </a>
+              </Link>
               <Link
                 href="/Profil"
                 className="inline-block rounded-lg border border-indigo-300 px-6 py-3 text-indigo-100 hover:bg-indigo-600 hover:border-indigo-600 hover:text-white transition-all duration-300"
@@ -164,13 +164,13 @@ export default function EnhancedHero() {
                 
                 <div className="bg-indigo-600/20 p-4 rounded-lg">
                   <p className="text-sm text-gray-200">
-                    SMA Harapan Bangsa mengubah cara belajar menjadi lebih menyenangkan dan relevan dengan dunia kerja.
+                    SMAN 17 BONE mengubah cara belajar menjadi lebih menyenangkan dan relevan dengan dunia kerja.
                   </p>
                   <div className="mt-3 flex items-center gap-2">
                     <div className="h-8 w-8 bg-indigo-600 rounded-full"></div>
                     <div>
                       <p className="text-white text-xs font-semibold">Drs.H.MASTAN.M.pd</p>
-                      <p className="text-xs text-gray-400">Alumni 2023</p>
+                      <p className="text-xs text-gray-400">kepala sekolah</p>
                     </div>
                   </div>
                 </div>

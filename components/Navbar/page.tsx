@@ -36,7 +36,6 @@ export default function Navbar() {
   const toggleDropdown = (name: string) => {
     setOpenDropdown(prev => (prev === name ? null : name))
   }
-
   return (
     <Disclosure as="nav" className={`fixed top-0 w-full z-50 bg-white shadow-md ${inter.variable}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

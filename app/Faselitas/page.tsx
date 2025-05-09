@@ -244,7 +244,7 @@ export default function FasilitasSekolah() {
 
               {/* Facility Detail Modal */}
               {selectedFacility && (
-                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 mt-12">
+                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-auto p-4 mt-12">
                   <div className="bg-white rounded-2xl overflow-hidden max-w-2xl w-full max-h-[90vh] shadow-2xl">
                     <div className="relative h-72 sm:h-96">
                       <Image
@@ -279,15 +279,7 @@ export default function FasilitasSekolah() {
                             <li>• Dilengkapi peralatan teknologi terkini</li>
                           </ul>
                         </div>
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <h4 className="font-medium text-gray-700 mb-2">Informasi Penggunaan</h4>
-                          <ul className="text-sm text-gray-600 space-y-1">
-                            <li>• Tersedia untuk kegiatan akademik</li>
-                            <li>• Dapat diakses pada jam sekolah</li>
-                            <li>• Pendampingan oleh staff terlatih</li>
-                            <li>• Perawatan rutin untuk kenyamanan</li>
-                          </ul>
-                        </div>
+                        
                       </div>
                       
                       <div className="flex justify-end">
