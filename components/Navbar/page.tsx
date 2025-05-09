@@ -13,7 +13,7 @@ const inter = Inter({
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
-  { name: 'Fasilitas', href: '/Faselitas', current: false },
+  { name: 'FasilitasD ', href: '/Faselitas', current: false },
   {
     name: 'Program',
     dropdown: true,
@@ -43,7 +43,7 @@ export default function Navbar() {
           {/* Logo dan mobile button */}
           <Link href={'/'} className="flex items-center">
             <Image src="/img/1.png" alt="Logo" className="h-8 w-auto mr-2" width={32} height={32} />
-            <span className={`text-lg font-bold text-gray-800 ${inter.variable}`}>SMAN 17 BONE</span>
+            <span className={`text-lg font-bold text-indigo-600 ${inter.variable}`}>SMAN 17 BONE</span>
           </Link>
 
           <div className="sm:hidden">
