@@ -41,7 +41,7 @@ export async function createData(prevState: any, formData: { get: (arg0: string)
 
   try {
     // Create the directory if it doesn't exist
-    const galleryPath = path.join(process.cwd(), "public/gallery");
+    const galleryPath = path.join(process.cwd(), "public/img/gallery");
     await mkdir(galleryPath, { recursive: true });
 
     // Convert file to buffer

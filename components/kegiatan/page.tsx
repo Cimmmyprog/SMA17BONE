@@ -42,10 +42,6 @@ export default function Kegiatan() {
               Dengan visi{""}Menjadi sekolah unggul yang melahirkan generasi berkarakter, berprestasi, dan berwawasan
               global, kami berkomitmen untuk terus meningkatkan kualitas pendidikan dengan dukungan perangkat IT serta
               berbagai sistem informasi yang menunjang kegiatan belajar-mengajar.
-              <br /><br />
-              Website ini kami hadirkan sebagai sarana informasi, komunikasi, dan kolaborasi antara sekolah dengan siswa,
-              orang tua, alumni, serta masyarakat luas. Harapan kami, website ini dapat menjadi jembatan yang
-              memperkuat transparansi dan keterbukaan informasi pendidikan di SMAN 17 BONE.
               
             </p>
           </div>

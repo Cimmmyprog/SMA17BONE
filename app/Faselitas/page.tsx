@@ -244,15 +244,15 @@ export default function FasilitasSekolah() {
 
               {/* Facility Detail Modal */}
               {selectedFacility && (
-                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-                  <div className="bg-white rounded-2xl overflow-hidden max-w-4xl w-full max-h-[90vh] shadow-2xl">
+                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 mt-12">
+                  <div className="bg-white rounded-2xl overflow-hidden max-w-2xl w-full max-h-[90vh] shadow-2xl">
                     <div className="relative h-72 sm:h-96">
                       <Image
                         src={`/img/faselitas/${selectedFacility.img}`}
                         alt={selectedFacility.title}
                         className="object-cover"
                         fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 800px"
+                        sizes="(max-width: 700px) 100vw, (max-width: 800px) 90vw, 500px"
                       />
                       <button 
                         onClick={closeFacilityDetail}
@@ -263,7 +263,7 @@ export default function FasilitasSekolah() {
                     </div>
                     <div className="p-6">
                       <h3 className="text-2xl font-bold text-gray-800 mb-4">{selectedFacility.title}</h3>
-                      <p className="text-gray-600 mb-6">
+                      <p className="text-gray-600 mb-4">
                         {/* This would display the facility description if available in your API */}
                         Fasilitas ini dirancang untuk mendukung kegiatan belajar mengajar dengan standardisasi yang tinggi. 
                         Dilengkapi dengan peralatan modern dan lingkungan yang nyaman untuk memaksimalkan potensi siswa.
