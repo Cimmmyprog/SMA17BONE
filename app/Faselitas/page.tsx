@@ -55,7 +55,6 @@ export default function FasilitasSekolah() {
     fetchFasilitas();
   }, []);
 
-  // Categories for filtering - assuming we can categorize based on title keywords
   const categories = {
     all: "Semua Fasilitas",
     academic: "Akademik",
@@ -63,18 +62,13 @@ export default function FasilitasSekolah() {
     religious: "Keagamaan",
     arts: "Seni & Budaya"
   };
-
-  // Filter facilities based on activeTab and searchQuery
   const filteredFacilities = fasilitas.filter(facility => {
     const matchesSearch = facility.title.toLowerCase().includes(searchQuery.toLowerCase());
-    
     if (activeTab === "all") return matchesSearch;
-    
-    // This is just an example - in a real app, you'd have category data in your API
     const matchesCategory = 
       (activeTab === "academic" && facility.title.match(/lab|kelas|perpustakaan|study/i)) ||
       (activeTab === "sports" && facility.title.match(/lapangan|gym|olahraga|sport/i)) ||
-      (activeTab === "religious" && facility.title.match(/masjid|mushola|ibadah|prayer/i)) ||
+      (activeTab === "religious" && facility.title.match(/Masjid|mushola|ibadah|prayer/i)) ||
       (activeTab === "arts" && facility.title.match(/aula|teater|seni|art|musik|music/i));
     
     return matchesSearch && matchesCategory;
@@ -243,57 +237,61 @@ export default function FasilitasSekolah() {
               </div>
 
               {/* Facility Detail Modal */}
-              {selectedFacility && (
-                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-auto p-4 mt-12">
-                  <div className="bg-white rounded-2xl overflow-hidden max-w-2xl w-full max-h-[90vh] shadow-2xl">
-                    <div className="relative h-72 sm:h-96">
-                      <Image
-                        src={`/img/faselitas/${selectedFacility.img}`}
-                        alt={selectedFacility.title}
-                        className="object-cover"
-                        fill
-                        sizes="(max-width: 700px) 100vw, (max-width: 800px) 90vw, 500px"
-                      />
-                      <button 
-                        onClick={closeFacilityDetail}
-                        className="absolute top-4 right-4 bg-black/50 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black/70 transition"
-                      >
-                        ✕
-                      </button>
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-2xl font-bold text-gray-800 mb-4">{selectedFacility.title}</h3>
-                      <p className="text-gray-600 mb-4">
-                        {/* This would display the facility description if available in your API */}
-                        Fasilitas ini dirancang untuk mendukung kegiatan belajar mengajar dengan standardisasi yang tinggi. 
-                        Dilengkapi dengan peralatan modern dan lingkungan yang nyaman untuk memaksimalkan potensi siswa.
-                      </p>
-                      
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <h4 className="font-medium text-gray-700 mb-2">Fitur Unggulan</h4>
-                          <ul className="text-sm text-gray-600 space-y-1">
-                            <li>• Desain modern dan ergonomis</li>
-                            <li>• Kapasitas optimal untuk pembelajaran</li>
-                            <li>• Pencahayaan dan sirkulasi udara yang baik</li>
-                            <li>• Dilengkapi peralatan teknologi terkini</li>
-                          </ul>
-                        </div>
-                        
-                      </div>
-                      
-                      <div className="flex justify-end">
-                        <button
-                          onClick={closeFacilityDetail}
-                          className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
-                        >
-                          Tutup
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
+            {selectedFacility && (
+  <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 px-4">
+    <div className="bg-white rounded-2xl overflow-hidden shadow-2xl max-w-md w-full animate-fade-in relative mt-24">
+      
+      {/* Tombol Tutup */}
+      <button 
+        onClick={closeFacilityDetail}
+        className="absolute top-3 right-3 bg-black/40 text-white w-9 h-9 rounded-full flex items-center justify-center hover:bg-black/60 transition z-10"
+      >
+        ✕
+      </button>
+
+      {/* Gambar */}
+      <div className="relative h-48 sm:h-56">
+        <Image
+          src={`/img/faselitas/${selectedFacility.img}`}
+          alt={selectedFacility.title}
+          fill
+          className="object-cover w-full h-full"
+        />
+      </div>
+
+      {/* Konten */}
+      <div className="p-5">
+        <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">
+          {selectedFacility.title}
+        </h3>
+        <p className="text-sm text-gray-600 mb-4 text-center">
+          Fasilitas ini dirancang untuk mendukung kegiatan belajar mengajar
+          dengan standardisasi tinggi. Lingkungan nyaman, modern, dan efisien.
+        </p>
+
+        <div className="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 mb-4">
+          <h4 className="font-medium text-base mb-2">Fitur Unggulan</h4>
+          <ul className="space-y-1 list-disc list-inside">
+            <li>Desain modern & ergonomis</li>
+            <li>Kapasitas optimal pembelajaran</li>
+            <li>Pencahayaan & sirkulasi udara baik</li>
+            <li>Peralatan teknologi terkini</li>
+          </ul>
+        </div>
+
+        <div className="flex justify-center">
+          <button
+            onClick={closeFacilityDetail}
+            className="px-5 py-2 rounded-full bg-indigo-600 text-white text-sm hover:bg-indigo-700 transition"
+          >
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
             </>
           )}
         </div>

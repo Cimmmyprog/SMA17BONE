@@ -33,6 +33,7 @@ export default function EnhancedHero() {
   ]
 
   return (
+
     <section className="relative h-screen overflow-hidden pt-6 sm:mt-[70px] mt-[70px]">
       {/* Background slider */}
       <div className="absolute inset-0 h-full w-full">
@@ -74,8 +75,11 @@ export default function EnhancedHero() {
       </div>
 
       {/* Main content */}
+
       <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8 py-16 h-full flex items-center">
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
           <div className="space-y-8">
             <h1 className="text-white text-5xl sm:text-6xl lg:text-6xl font-bold leading-tight">
               Masa Depan Cerah 
