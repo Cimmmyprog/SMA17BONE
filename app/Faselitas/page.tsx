@@ -286,7 +286,23 @@ export default function FasilitasSekolah() {
                     </div>
                   </div>
                 </div>
+<<<<<<< HEAD
               )}
+=======
+                <div className="flex justify-center">
+                  <button
+                    onClick={closeFacilityDetail}
+                    className="px-5 py-2 rounded-full bg-indigo-600 text-white text-sm hover:bg-indigo-700 transition"
+                  >
+                    Tutup
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+>>>>>>> 0e11239 (Perbaiki tampilan modal fasilitas agar lebih modern dan responsif)
             </>
           )}
         </div>

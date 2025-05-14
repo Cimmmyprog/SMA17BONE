@@ -1,5 +1,4 @@
 
-
 // import Facilities from "@/components/about/page";
 import Kegiatan from "@/components/kegiatan/page";
 import Baner from "@/components/hero/page";
