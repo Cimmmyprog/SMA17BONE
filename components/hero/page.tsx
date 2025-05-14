@@ -74,7 +74,7 @@ export default function EnhancedHero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8 py-16 h-full flex items-center">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8 py-28 h-full flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
           <div className="space-y-8">
