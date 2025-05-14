@@ -136,16 +136,16 @@ const BeritaSection = () => {
               onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
               className="mySwiper w-full"
             >
-              {beritaList.map((berita, index) => (
+              {beritaList.map((berita) => (
                 <SwiperSlide key={berita.id} className="w-full md:w-3/4 lg:w-2/3">
                   <Link href={`/Kabar/Detail/${berita.id}`} className="block">
                     <div className="bg-white shadow-xl rounded-2xl overflow-hidden hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-2 mx-4 my-8">
-                      <div className="relative w-full h-72 md:h-80 overflow-hidden">
+                      <div className="relative w-full h-56 md:h-80 overflow-hidden bg-top">
                         <Image
                           src={`/assets/${berita.image}`}
                           alt={berita.title}
                           fill
-                          className="object-cover transition-transform duration-700 hover:scale-110"
+                          className="object-cover bg-top transition-transform duration-700 hover:scale-110 "
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                         

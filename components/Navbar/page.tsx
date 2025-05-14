@@ -4,7 +4,7 @@ import { Bars3Icon, XMarkIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import {  useState } from 'react'
 
 const inter = Inter({
   variable: '--font-inter',
@@ -37,12 +37,12 @@ export default function Navbar() {
     setOpenDropdown(prev => (prev === name ? null : name))
   }
   return (
-    <Disclosure as="nav" className={`fixed top-0 w-full z-50 bg-amber-50 shadow-md ${inter.variable}`}>
+    <Disclosure as="nav" className={`fixed top-0 w-full z-50 bg-white shadow-md ${inter.variable}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-[69px] items-center justify-between">
           <Link href="/" className="flex items-center">
             <Image src="/img/1.png" alt="Logo" className="h-8 w-auto mr-2" width={32} height={32} />
-            <span className={`text-lg font-bold text-indigo-600 ${inter.variable}`}>SMAN 17 BONE</span>
+            <span className={`text-lg font-bold text-gray-500 ${inter.variable}`}>SMAN 17 BONE</span>
           </Link>
 
           <div className="sm:hidden">
@@ -52,7 +52,7 @@ export default function Navbar() {
             </DisclosureButton>
           </div>
 
-          <div className="hidden sm:flex space-x-4">
+          <div className="hidden sm:flex  space-x-6">
             {navigation.map((item) =>
               item.dropdown ? (
                 <div key={item.name} className="relative">

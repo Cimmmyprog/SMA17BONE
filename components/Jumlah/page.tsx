@@ -24,7 +24,7 @@ export default function ModernStatSection() {
     if (section) observer.observe(section);
     
     return () => {
-      if (section) observer.disconnect();  // Fixed: Changed unobserve to disconnect
+      if (section) observer.disconnect();
     };
   }, []);
 
@@ -39,7 +39,7 @@ export default function ModernStatSection() {
     },
     {
       label: "Guru",
-      count: 45,
+      count: 20,
       icon: FaChalkboardTeacher,  // Fixed: Changed to component reference
       color: "bg-gradient-to-br from-green-500/90 to-emerald-600/90",
       textColor: "text-green-50",
@@ -79,7 +79,7 @@ export default function ModernStatSection() {
   };
 
   return (
-    <section id="stats-section" className="bg-gradient-to-br from-slate-50 to-slate-100 py-16 px-4 relative overflow-hidden">
+    <section id="stats-section" className=" py-16 px-4 relative overflow-hidden">
       {/* Enhanced Background Decoration */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-40">
         <div className="absolute -top-24 -left-24 w-64 h-64 rounded-full bg-blue-200/50 blur-3xl"></div>
@@ -89,22 +89,6 @@ export default function ModernStatSection() {
       </div>
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 tracking-tight">
-            SMAN 17 BONE
-          </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto mb-4"></div>
-          <p className="text-gray-600 max-w-xl mx-auto text-lg">
-            Pencapaian kami dalam memberikan pendidikan berkualitas selama bertahun-tahun
-          </p>
-        </motion.div>
-
         <motion.div
           variants={container}
           initial="hidden"
