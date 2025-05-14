@@ -99,7 +99,7 @@ export default function ModernContactInfo() {
         <div className="absolute -bottom-20 right-1/3 w-72 h-72 rounded-full bg-indigo-200/50 blur-3xl"></div>
       </div>
 
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-4xl mx-auto relative">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}

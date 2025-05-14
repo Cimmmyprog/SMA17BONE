@@ -33,8 +33,12 @@ export default function EnhancedHero() {
   ]
 
   return (
+<<<<<<< HEAD
 
     <section className="relative h-screen overflow-hidden pt-6 sm:mt-[70px] mt-[70px]">
+=======
+    <section className="relative h-screen overflow-hidden py-6 mt-[70px] sm:mt-[70px]">
+>>>>>>> a5fedc1 (arafat akbar)
       {/* Background slider */}
       <div className="absolute inset-0 h-full w-full">
         {mounted ? (
@@ -75,9 +79,13 @@ export default function EnhancedHero() {
       </div>
 
       {/* Main content */}
+<<<<<<< HEAD
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8 py-16 h-full flex items-center">
         
+=======
+      <div className="relative z-10 mx-auto max-w-7xl px-4  lg:px-8 py-48 h-full flex items-center">
+>>>>>>> a5fedc1 (arafat akbar)
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
           <div className="space-y-8">
@@ -108,7 +116,7 @@ export default function EnhancedHero() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
               {features.map((feature, index) => (
                 <div
                   key={index}

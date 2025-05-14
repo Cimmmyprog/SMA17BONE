@@ -42,10 +42,11 @@ const BeritaSection = () => {
           cache: 'no-store',
           method: 'GET',
         });
-        const data = await res.json();
+        const isi = await res.json();
         
-        // Adding mock date and views for demonstration
-        const enhancedData = data.data.map((item : any) => ({
+        const data = isi.data;
+
+        const enhancedData = data.map((item : any) => ({
           ...item,
           date: new Date().toLocaleDateString('id-ID', {
             day: 'numeric',
