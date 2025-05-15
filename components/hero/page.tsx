@@ -78,7 +78,7 @@ export default function EnhancedHero() {
       <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8 py-28 h-full flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-          <div className="space-y-8">
+          <div className="space-y-5">
             <h1 className="text-white text-5xl sm:text-6xl lg:text-6xl font-bold leading-tight">
               Masa Depan Cerah 
               <span className="block text-indigo-400">Dimulai dari Sini</span>
