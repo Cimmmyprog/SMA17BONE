@@ -4,32 +4,44 @@ const fasilitas = [
   {
     id: 1,
     title: "Perpustakaan",
-    img: "9.jpeg",
+    img: "f.jpeg",
+    deskripsi:
+      "Perpustakaan adalah tempat yang menyediakan berbagai sumber informasi, seperti buku, majalah, dan media digital, untuk mendukung pembelajaran dan penelitian.",
   },
   {
     id: 2,
     title: "Laboratorium",
     img: "3.jpg",
+    deskripsi:
+      "Laboratorium adalah ruang yang dilengkapi dengan peralatan dan bahan untuk melakukan eksperimen, penelitian, dan pembelajaran praktis di bidang sains dan teknologi.",
   },
   {
     id: 3,
     title: "Lapangan Olahraga",
-    img: "1.jpg",
+    img: "c.jpeg",
+    deskripsi:
+      "Lapangan olahraga adalah area terbuka yang dirancang untuk berbagai aktivitas fisik dan olahraga, seperti sepak bola, basket, dan atletik.",
   },
   {
     id: 4,
     title: "Ruang Komputer",
-    img: "5.jpeg",
+    img: "b.jpeg",
+    deskripsi:
+      "Ruang komputer adalah ruang yang dilengkapi dengan komputer dan perangkat lunak untuk mendukung pembelajaran, penelitian, dan pengembangan keterampilan teknologi informasi.",
   },
   {
     id: 5,
     title: "Ruang aula",
-    img: "8.jpeg",
+    img: "d.jpeg",
+    deskripsi:
+      "Ruang aula adalah ruang besar yang digunakan untuk pertemuan, acara, dan kegiatan sekolah, seperti seminar, konser, dan upacara.",
   },
   {
     id: 6,
     title: "Mesjid",
-    img: "7.jpeg",
+    img: "a.jpeg",
+    deskripsi:
+      "Mesjid adalah tempat ibadah bagi umat Islam, yang digunakan untuk melaksanakan shalat, pengajian, dan kegiatan keagamaan lainnya.",
   },
 ];
 

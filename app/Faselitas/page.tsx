@@ -10,6 +10,7 @@ interface Fasilitas {
   id: number;
   title: string;
   img: string;
+  deskripsi : string;
 }
 
 export default function FasilitasSekolah() {
@@ -264,8 +265,7 @@ export default function FasilitasSekolah() {
           {selectedFacility.title}
         </h3>
         <p className="text-sm text-gray-600 mb-4 text-center">
-          Fasilitas ini dirancang untuk mendukung kegiatan belajar mengajar
-          dengan standardisasi tinggi. Lingkungan nyaman, modern, dan efisien.
+          {selectedFacility.deskripsi}
         </p>
 
         <div className="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 mb-4">

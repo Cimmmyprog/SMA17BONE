@@ -4,9 +4,9 @@ import { Inter } from "next/font/google";
 import Image from "next/image";
 
 const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
-})
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
 
 const ProfilSekolah = () => {
   const data = [
@@ -35,7 +35,8 @@ const ProfilSekolah = () => {
     ],
   ];
 
-  const visi = "Menjadi sekolah unggul dalam pengembangan akademik dan karakter siswa, yang berorientasi pada pembentukan generasi yang berwawasan global, berakhlak mulia, dan siap menghadapi tantangan zaman.";
+  const visi =
+    "Menjadi sekolah unggul dalam pengembangan akademik dan karakter siswa, yang berorientasi pada pembentukan generasi yang berwawasan global, berakhlak mulia, dan siap menghadapi tantangan zaman.";
 
   const misi = [
     "Menyediakan pendidikan berkualitas yang dapat mengembangkan potensi akademik, sosial, dan emosional siswa.",
@@ -47,7 +48,7 @@ const ProfilSekolah = () => {
   return (
     <div>
       <section className="max-w-5xl mx-auto mt-10 p-4 bg-white rounded-xl shadow-md text-sm">
-        <h2 className="text-xl font-bold text-center  my-7">Profil Sekolah</h2>
+        <h2 className="text-xl font-bold text-center my-7">Profil Sekolah</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Logo Sekolah */}
@@ -81,7 +82,9 @@ const ProfilSekolah = () => {
                           {value}
                         </a>
                       ) : (
-                        value.split("\n").map((line, i) => <p key={i}>{line}</p>)
+                        value.split("\n").map((line, i) => (
+                          <p key={i}>{line}</p>
+                        ))
                       )}
                     </td>
                   </tr>
@@ -90,34 +93,32 @@ const ProfilSekolah = () => {
             </table>
           </div>
         </div>
-
-        {/* Visi dan Misi Sekolah */}
-        
       </section>
-      <div className={`mt-8  mx-auto max-w-5xl py-8 ${inter.className}`}>
-        <div>
-          <h1 className="text-center font-semibold text-3xl mb-2">VISI MISI</h1>
-        </div>
+
+      {/* Visi dan Misi Sekolah */}
+      <div className={`mt-8 mx-auto max-w-5xl py-8 ${inter.className}`}>
+        <h1 className="text-center font-semibold text-3xl mb-2">VISI MISI</h1>
         <div className="grid md:grid-cols-2 grid-cols-1 gap-6 px-3">
           <div>
-          <h3 className="text-lg font-bold mb-4">Visi Sekolah</h3>
-          <p className="text-gray-800">{visi}</p>
+            <h3 className="text-lg font-bold mb-4">Visi Sekolah</h3>
+            <p className="text-gray-800">{visi}</p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-bold mb-4">Misi Sekolah</h3>
+            <ul className="list-disc pl-6 text-gray-800">
+              {misi.map((item, index) => (
+                <li key={index} className="mb-2">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-          
-      <div>
-        <h3 className="text-lg font-bold mt-6 mb-4">Misi Sekolah</h3>
-                <ul className="list-disc pl-6 text-gray-800">
-                  {misi.map((item, index) => (
-                    <li key={index} className="mb-2">{item}</li>
-                  ))}
-                </ul>
       </div>
-        </div>
- 
-          
-        </div>
+
       <ContactCompact />
-      <Footer/>
+      <Footer />
     </div>
   );
 };
