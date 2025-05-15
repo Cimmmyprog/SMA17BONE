@@ -27,9 +27,10 @@ export default function EnhancedHero() {
   }, [])
 
   const bgImages = [
-    '/img/4.jpg', 
-    '/img/5.jpg', 
-    '/img/6.jpg'
+    '/img/hero/1.jpeg', 
+    'img/hero/2.jpeg',
+    'img/hero/3.jpeg',
+    'img/hero/4.jpeg'
   ]
 
   return (
@@ -84,7 +85,7 @@ export default function EnhancedHero() {
             </h1>
 
             <p className={`text-lg text-gray-300 max-w-2xl ${inter.className}`}>
-              Bergabunglah dengan <strong className="text-indigo-300">SMAN 17 BONE</strong> — 
+              Bergabunglah dengan <strong className="text-indigo-300">SMAN 17 BONE </strong> 
               sekolah inovatif yang menghadirkan kurikulum digital, pengajar profesional, dan 
               lingkungan belajar modern untuk generasi emas Indonesia.
             </p>
@@ -105,7 +106,7 @@ export default function EnhancedHero() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 pb-10">
               {features.map((feature, index) => (
                 <div
                   key={index}
