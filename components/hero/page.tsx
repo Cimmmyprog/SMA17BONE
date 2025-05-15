@@ -79,8 +79,8 @@ export default function EnhancedHero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
 
           {/* Left content */}
-          <div className="space-y-6">
-            <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+          <div className="space-y-8">
+            <h1 className="text-white text-5xl sm:text-5xl lg:text-6xl font-bold leading-tight">
               Masa Depan Cerah
               <span className="block text-indigo-400">Dimulai dari Sini</span>
             </h1>
@@ -127,7 +127,7 @@ export default function EnhancedHero() {
 
           {/* Right side content */}
           <div className="hidden lg:block">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-xl max-w-md">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-xl max-w-xl">
               <div className="flex justify-between items-center mb-6">
                 <div className="flex items-center gap-3">
                   <div className="h-10 w-10 bg-indigo-600 rounded-full flex items-center justify-center">
