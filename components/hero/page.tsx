@@ -67,7 +67,7 @@ export default function EnhancedHero() {
         ) : (
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('/img/4.jpg')" }}
+            style={{ backgroundImage: "url('/img/hero/1.jpeg')" }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40" />
           </div>
