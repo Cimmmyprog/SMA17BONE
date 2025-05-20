@@ -1,7 +1,7 @@
 // app/api/auth/[...nextauth]/route.ts
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import type { NextRequest } from "next/server";
+
 
 export const authOptions = {
   providers: [
@@ -30,12 +30,12 @@ export const authOptions = {
     signIn: "/login",
   },
   session: {
-    strategy: "jwt",
+    strategy: process.env.NEXTAUTH_SECRET as "jwt",
   },
   secret: process.env.NEXTAUTH_SECRET,
 };
 
-// Buat handler function untuk tiap method
-const handler = (req: NextRequest) => NextAuth(req, authOptions);
+
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
