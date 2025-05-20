@@ -20,7 +20,6 @@ export const authOptions = {
             email: "admin@example.com",
           };
         }
-        
         return null;
       },
     }),
