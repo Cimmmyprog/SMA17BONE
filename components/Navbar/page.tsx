@@ -116,10 +116,8 @@ export default function Navbar() {
                   )}
                 </div>
               ) : (
-                <Link
-                  href={item.href}
+                <a href={item.href}
                   key={item.name}
-                  onClick={() => setOpenDropdown(null)}
                   className={classNames(
                     item.current
                       ? 'bg-indigo-600 text-white'
@@ -128,7 +126,7 @@ export default function Navbar() {
                   )}
                 >
                   {item.name}
-                </Link>
+                </a>
               )
             )}
           </div>
@@ -152,7 +150,7 @@ export default function Navbar() {
               ))}
             </div>
           ) : (
-            <Link
+            <a
               key={item.name}
               href={item.href}
               className={classNames(
@@ -163,7 +161,7 @@ export default function Navbar() {
               )}
             >
               {item.name}
-            </Link>
+            </a>
           )
         )}
       </DisclosurePanel>
