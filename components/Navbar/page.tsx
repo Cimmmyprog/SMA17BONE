@@ -19,14 +19,14 @@ const inter = Inter({
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
-  { name: 'Fasilitas', href: '/Fasilitas', current: false },
+  { name: 'Fasilitas', href: '/Faselitas', current: false },
   {
     name: 'Program',
     dropdown: true,
     current: false,
     items: [
       { name: 'Ekstrakurikuler', href: '/Ekstra' },
-      { name: 'Galeri & News', href: '/Galeri' },
+      { name: 'Galeri SMANTUP', href: '/Gallrey' },
     ],
   },
   { name: 'Profil', href: '/Profil', current: false },
