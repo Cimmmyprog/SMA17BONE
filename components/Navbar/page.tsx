@@ -58,7 +58,7 @@ export default function Navbar() {
       className={classNames(
         'fixed top-0 z-50 w-full transition-all duration-300',
         scrolled
-          ? 'bg-white/70 backdrop-blur-md shadow-md'
+          ? 'bg-white/60 backdrop-blur-lg shadow-md'
           : 'bg-white'
       )}
     >
@@ -116,7 +116,8 @@ export default function Navbar() {
                   )}
                 </div>
               ) : (
-                <a
+                <Link
+                  href={item.href}
                   key={item.name}
                   onClick={() => setOpenDropdown(null)}
                   className={classNames(
@@ -127,7 +128,7 @@ export default function Navbar() {
                   )}
                 >
                   {item.name}
-                </a>
+                </Link>
               )
             )}
           </div>
@@ -151,7 +152,7 @@ export default function Navbar() {
               ))}
             </div>
           ) : (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               className={classNames(
@@ -162,7 +163,7 @@ export default function Navbar() {
               )}
             >
               {item.name}
-            </a>
+            </Link>
           )
         )}
       </DisclosurePanel>
