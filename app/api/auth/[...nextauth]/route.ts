@@ -20,13 +20,13 @@ export const authOptions = {
             email: "admin@example.com",
           };
         }
-        // Jika tidak cocok, return null artinya login gagal
+        
         return null;
       },
     }),
   ],
   pages: {
-    signIn: "/login", // Halaman login custom
+    signIn: "/login", 
   },
   session: {
     strategy: "jwt",
