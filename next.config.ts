@@ -23,9 +23,7 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // eslint config should be outside of `images`
   eslint: {
-    // This allows production builds to complete even if there are ESLint errors
     ignoreDuringBuilds: true,
   },
   experimental: {

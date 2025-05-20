@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 export default function NavbarWrapper() {
   const pathname = usePathname();
-  const disableNavbar = ["/input", "/inp", "/inp/galley"];
+  const disableNavbar = ["/input", "/auth" ,"auth/gallery" , "/auth/news"];
 
   if (disableNavbar.includes(pathname.toLowerCase())) {
     return null;

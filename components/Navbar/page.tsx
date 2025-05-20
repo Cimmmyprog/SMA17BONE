@@ -1,10 +1,16 @@
 'use client'
+
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'
+import {
+  Bars3Icon,
+  XMarkIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+} from '@heroicons/react/24/outline'
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
-import {  useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const inter = Inter({
   variable: '--font-inter',
@@ -13,17 +19,17 @@ const inter = Inter({
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
-  { name: 'Fasilitas', href: '/Faselitas', current: false },
+  { name: 'Fasilitas', href: '/Fasilitas', current: false },
   {
     name: 'Program',
     dropdown: true,
     current: false,
     items: [
       { name: 'Ekstrakurikuler', href: '/Ekstra' },
-      { name: 'Galeri & News', href: '/Gallrey' },
-    ]
+      { name: 'Galeri & News', href: '/Galeri' },
+    ],
   },
-  { name: 'Profil', href: '/Profil', current: false }
+  { name: 'Profil', href: '/Profil', current: false },
 ]
 
 function classNames(...classes: string[]) {
@@ -32,19 +38,45 @@ function classNames(...classes: string[]) {
 
 export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const toggleDropdown = (name: string) => {
-    setOpenDropdown(prev => (prev === name ? null : name))
+    setOpenDropdown((prev) => (prev === name ? null : name))
   }
+
   return (
-    <Disclosure as="nav" className={`fixed top-0 w-full z-50 bg-white shadow-md ${inter.variable}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-[69px] items-center justify-between">
-          <Link href="/" className="flex items-center">
-            <Image src="/img/1.png" alt="Logo" className="h-8 w-auto mr-2" width={32} height={32} />
-            <span className={`text-lg font-bold text-gray-500 ${inter.variable}`}>SMAN 17 BONE</span>
+    <Disclosure
+      as="nav"
+      className={classNames(
+        'fixed top-0 z-50 w-full transition-all duration-300',
+        scrolled
+          ? 'bg-white/70 backdrop-blur-md shadow-md'
+          : 'bg-white'
+      )}
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-[70px] items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2">
+            <Image
+              src="/img/1.png"
+              alt="Logo"
+              width={32}
+              height={32}
+              className="h-8 w-auto"
+            />
+            <span className="text-lg font-semibold text-gray-800">SMAN 17 BONE</span>
           </Link>
 
+          {/* Mobile menu button */}
           <div className="sm:hidden">
             <DisclosureButton className="inline-flex items-center justify-center p-2 text-gray-700 hover:bg-gray-200 rounded-md">
               <Bars3Icon className="block h-6 w-6 ui-open:hidden" />
@@ -52,13 +84,14 @@ export default function Navbar() {
             </DisclosureButton>
           </div>
 
-          <div className="hidden sm:flex  space-x-6">
+          {/* Desktop menu */}
+          <div className="hidden sm:flex items-center gap-4">
             {navigation.map((item) =>
               item.dropdown ? (
                 <div key={item.name} className="relative">
                   <button
                     onClick={() => toggleDropdown(item.name)}
-                    className="flex items-center text-sm px-3 py-2 font-medium text-gray-700 hover:bg-indigo-600 hover:text-white rounded-md transition-all"
+                    className="flex items-center px-4 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all rounded-md"
                   >
                     {item.name}
                     {openDropdown === item.name ? (
@@ -68,13 +101,13 @@ export default function Navbar() {
                     )}
                   </button>
                   {openDropdown === item.name && (
-                    <div className="absolute left-0 mt-2 w-44 bg-white shadow-lg rounded-md z-10 animate-fade-in">
+                    <div className="absolute left-0 mt-2 w-44 rounded-md shadow-lg bg-white border border-gray-200 z-10 animate-fade-in">
                       {item.items.map((subItem) => (
                         <Link
-                          onClick={() => setOpenDropdown(null)}
                           key={subItem.name}
                           href={subItem.href}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 hover:text-indigo-800 rounded"
+                          onClick={() => setOpenDropdown(null)}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 rounded transition"
                         >
                           {subItem.name}
                         </Link>
@@ -83,52 +116,53 @@ export default function Navbar() {
                   )}
                 </div>
               ) : (
-                <a
-                  href={item.href}
+                <Link
                   key={item.name}
+                  href={item.href}
                   className={classNames(
                     item.current
                       ? 'bg-indigo-600 text-white'
                       : 'text-gray-700 hover:bg-indigo-600 hover:text-white',
-                    'px-3 py-2 rounded-md text-sm font-medium transition'
+                    'px-4 py-2 rounded-md text-sm font-medium transition'
                   )}
                 >
                   {item.name}
-                </a>
+                </Link>
               )
             )}
           </div>
         </div>
       </div>
 
-      <DisclosurePanel className="sm:hidden px-4 pt-2 pb-3 space-y-1">
+      {/* Mobile menu */}
+      <DisclosurePanel className="sm:hidden px-4 pt-2 pb-4 space-y-2">
         {navigation.map((item) =>
           item.dropdown ? (
-            <div key={item.name} className="space-y-1">
-              <span className="block px-3 py-2 text-sm font-medium text-gray-700">{item.name}</span>
+            <div key={item.name}>
+              <span className="block text-sm font-semibold text-gray-700">{item.name}</span>
               {item.items.map((subItem) => (
-                <a
+                <Link
                   key={subItem.name}
                   href={subItem.href}
-                  className="block px-6 py-1 text-sm text-gray-600 hover:bg-indigo-600 hover:text-white rounded transition"
+                  className="block pl-4 py-1 text-sm text-gray-600 hover:bg-indigo-100 hover:text-indigo-800 rounded transition"
                 >
                   {subItem.name}
-                </a>
+                </Link>
               ))}
             </div>
           ) : (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               className={classNames(
                 item.current
                   ? 'bg-indigo-600 text-white'
                   : 'text-gray-700 hover:bg-indigo-600 hover:text-white',
-                'block px-3 py-2 rounded-md text-sm font-medium transition'
+                'block px-4 py-2 rounded-md text-sm font-medium transition'
               )}
             >
               {item.name}
-            </a>
+            </Link>
           )
         )}
       </DisclosurePanel>
